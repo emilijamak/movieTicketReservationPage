@@ -30,6 +30,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 .btn {
   width: 50%;
   margin-top: 10px;
@@ -43,6 +44,31 @@ img {
 
 .sittingPlan {
   background-color: white;
-  height: 500px;
-  width: 600px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 610px;
+  display: grid;
+  grid-template-columns: repeat(5, 110px);
+  grid-template-rows: repeat(4, 110px);
+  gap: 10px;
 }
+
+.seat {
+  height: 50px;
+  width: 80px;
+  background-color: #9a9a9a;
+  cursor: pointer;
+}
+.seat:hover {
+  transform: scale(1.02);
+}
+
+.picked {
+  border: 2px solid lightgreen;
+}
+
+.reserved {
+  border: 2px solid red;
+}
+
+/*# sourceMappingURL=movie.css.map */
