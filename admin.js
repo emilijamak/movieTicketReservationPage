@@ -20,11 +20,11 @@ movieList = JSON.parse(movieList)
 
 
 if (currentUser === "admin") {
-    optionsDiv.style.display = "none" //flex
+    optionsDiv.style.display = "flex" //flex
     addMovieCont.style.display = "none"
 } else {
     optionsDiv.style.display = "none"
-    movieListCont.style.display = "none" //flex
+    movieListCont.style.display = "flex" //flex
     addMovieCont.style.display = "none"
     goBackButton.style.display = "none"
 }
@@ -85,6 +85,7 @@ function addSeatingPlan(movieList) {
     movieList.forEach(movie => {
         const seatingPlan = Array.from({ length: movie.seats }, (_, index) => ({ id: index + 1, reserved: false }));
         movie.seatingPlan = seatingPlan;
+        localStorage.setItem('movieList', JSON.stringify(movieList))
     });
 }
 

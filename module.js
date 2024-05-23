@@ -30,6 +30,7 @@ export function movieInfo(arr) {
             let currentMovie = arr[index]
             console.log(currentMovie)
             localStorage.setItem("currentMovie", JSON.stringify(currentMovie))
+            window.location.href = "movie.html"
         }
     })
 }
