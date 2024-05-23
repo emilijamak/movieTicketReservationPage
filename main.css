@@ -1,0 +1,91 @@
+body {
+  background-image: url("https://images.pexels.com/photos/375885/pexels-photo-375885.jpeg?cs=srgb&dl=pexels-conojeghuo-375885.jpg&fm=jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.options {
+  width: 900px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 20px;
+  display: none;
+}
+
+.movieList, .createMovie {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: 0.3s;
+  justify-content: center;
+  align-items: center;
+  color: #212c37;
+}
+.movieList:hover, .createMovie:hover {
+  transform: scale(1.02);
+}
+
+.movieListCont {
+  display: none;
+  flex-direction: column;
+  min-height: 700px;
+  width: 1200px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+h1 {
+  color: #212c37;
+  font-size: 50px;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+img {
+  height: 250px;
+}
+
+.movie {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.47);
+  cursor: pointer;
+}
+.movie img {
+  width: 169px;
+  height: 250px;
+}
+.movie:hover {
+  transform: scale(1.01);
+}
+
+i {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.addMovieCont {
+  width: 900px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.addMovieCont input {
+  width: 70%;
+  height: 50px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=main.css.map */

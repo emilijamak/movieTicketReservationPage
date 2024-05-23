@@ -1,0 +1,40 @@
+body {
+  background-image: url("https://images.pexels.com/photos/375885/pexels-photo-375885.jpeg?cs=srgb&dl=pexels-conojeghuo-375885.jpg&fm=jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  color: #212c37;
+  font-size: 70px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.loginCont {
+  background-color: rgba(255, 255, 255, 0.51);
+  border-radius: 10px;
+  width: 900px;
+  padding: 40px;
+}
+
+.user, .admin {
+  display: flex;
+  flex: 1;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.user:hover, .admin:hover {
+  transform: scale(1.02);
+}
+
+/*# sourceMappingURL=login.css.map */

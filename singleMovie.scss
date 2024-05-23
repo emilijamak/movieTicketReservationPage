@@ -1,0 +1,60 @@
+body {
+  background-image: url("https://images.pexels.com/photos/375885/pexels-photo-375885.jpeg?cs=srgb&dl=pexels-conojeghuo-375885.jpg&fm=jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cont {
+  background-color: rgba(255, 255, 255, 0.44);
+  border-radius: 10px;
+  height: 90%;
+  width: 90%;
+  display: flex;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seats {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: calc(5 * 110px + 4 * 10px + 20px); /* Adjust the width to fit the grid items, gaps, and padding */
+  display: grid!important;
+  grid-template-columns: repeat(5, 110px);
+  grid-template-rows: repeat(4, 110px);
+  gap: 10px;
+}
+
+.btn {
+  width: 50%;
+  margin-top: 10px; /* Adding some space between the buttons */
+}
+
+img {
+  height: 80%;
+  width: 90%;
+  border: 3px solid white;
+}
+
+.seat {
+  height: 50px;
+  width: 50px;
+  background-color: #5b61f1;
+}
