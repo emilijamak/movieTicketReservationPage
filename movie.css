@@ -56,15 +56,19 @@ img {
 .seat {
   height: 50px;
   width: 80px;
-  background-color: #9a9a9a;
+  background-color: #cccccc;
+  border: 2px solid gray;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .seat:hover {
   transform: scale(1.02);
 }
 
 .picked {
-  border: 2px solid lightgreen;
+  border: 2px solid #387e38;
 }
 
 .reserved {
