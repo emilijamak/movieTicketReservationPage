@@ -10,26 +10,34 @@ export function addMovie() {
         let movieList = JSON.parse(localStorage.getItem('movieList')) || [];  // Retrieve existing movie list
 
         if (movieTitleInput.value && movieImageInput.value && movieSeatsInput.value) {
-            if (movieSeatsInput.value > 30 && movieSeatsInput.value > 0) {
+            const seats = parseInt(movieSeatsInput.value, 10);
+
+            if (seats < 1 || seats > 30) {
                 alert('Please insert a number between 1 and 30');
             } else {
-
                 const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
                 if (!urlRegex.test(movieImageInput.value)) {
                     alert('Please enter a valid URL for the movie image');
                 } else {
-                    movieList.push({
-                        title: movieTitleInput.value,
-                        movieCover: movieImageInput.value,
-                        seats: parseInt(movieSeatsInput.value, 10),
-                        seatsTaken: 0
-                    });
-                    console.log(movieList);
-                    localStorage.setItem('movieList', JSON.stringify(movieList));
-                    addMovieCont.style.display = "none";
-                    optionsDiv.style.display = "flex";
-                    window.location.href = 'adminIndex.html';
+                    // Check if a movie with the same title already exists
+                    const existingMovie = movieList.find(movie => movie.title.toLowerCase() === movieTitleInput.value.toLowerCase());
+
+                    if (existingMovie) {
+                        alert('A movie with this title already exists. Please enter a different title.');
+                    } else {
+                        movieList.push({
+                            title: movieTitleInput.value,
+                            movieCover: movieImageInput.value,
+                            seats: seats,
+                            seatsTaken: 0
+                        });
+                        console.log(movieList);
+                        localStorage.setItem('movieList', JSON.stringify(movieList));
+                        addMovieCont.style.display = "none";
+                        optionsDiv.style.display = "flex";
+                        window.location.href = 'adminIndex.html';
+                    }
                 }
             }
         } else {
