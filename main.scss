@@ -20,6 +20,11 @@ background-repeat: no-repeat;
   padding-right: 50px;
   padding-left: 50px;
 
+  img {
+    width: 226px;
+    height: 100px;
+    border: none;
+  }
 
 }
 .logOut {
@@ -58,11 +63,11 @@ background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 30px;
-  margin-top: 120px;
+  margin-top: 50px;
 }
 
 h1 {
-  color: #fdf5fc;
+  color: #343434;
   font-size: 50px;
   text-align: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
@@ -77,6 +82,7 @@ img {
   border: 1px solid white;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.47);
+  overflow: hidden;
   img {
     width: 169px;
     height: 250px;
@@ -115,9 +121,10 @@ i {
 .cont {
   background-color: rgba(255, 255, 255, 0.44);
   border-radius: 10px;
-  height: 90%;
+  height: 900px;
   width: 1400px;
   display: none;
+  margin-top: 50px;
 }
 
 .left {
