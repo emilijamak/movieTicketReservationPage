@@ -20,11 +20,11 @@ movieList = JSON.parse(movieList)
 
 
 if (currentUser === "admin") {
-    optionsDiv.style.display = "flex" //flex
+    optionsDiv.style.display = "flex"
     addMovieCont.style.display = "none"
 } else {
     optionsDiv.style.display = "none"
-    movieListCont.style.display = "flex" //flex
+    movieListCont.style.display = "flex"
     addMovieCont.style.display = "none"
     goBackButton.style.display = "none"
 }
@@ -66,7 +66,7 @@ function appendMovies() {
         };
     });
 
-
+addSeatingPlan(movieList)
 }
 function goBack() {
     goBackButton.onclick = () => {
@@ -89,7 +89,6 @@ function addSeatingPlan(movieList) {
     });
 }
 
-addSeatingPlan(movieList);
 
 console.log(movieList);
 

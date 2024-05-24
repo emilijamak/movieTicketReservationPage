@@ -1,10 +1,7 @@
 const currentUser = localStorage.getItem("user");
 const container = document.querySelector('.cont');
-
-let movieList = localStorage.getItem("movieList");
-movieList = JSON.parse(movieList);
-let currentMovie = localStorage.getItem("currentMovie");
-currentMovie = JSON.parse(currentMovie);
+let movieList = JSON.parse(localStorage.getItem("movieList"));
+let currentMovie = JSON.parse(localStorage.getItem("currentMovie"));
 console.log(movieList);
 console.log(currentMovie);
 
@@ -12,7 +9,7 @@ function appendCurrentMovie() {
     container.innerHTML =
         `
         <div class="left d-flex justify-content-center align-items-center">
-            <img src=${currentMovie.movieCover} alt="">
+            <img src="${currentMovie.movieCover}" alt="">
         </div>
         <div class="right d-flex flex-column align-items-center gap-3">
             <h1>${currentMovie.title}</h1>
@@ -28,6 +25,7 @@ function appendSeats() {
     seats.innerHTML = '';
 
     currentMovie.seatingPlan.forEach((el, index) => {
+        console.log(el);
         const seat = document.createElement('div');
         seat.classList.add('seat');
         if (el.reserved) {
@@ -58,12 +56,11 @@ reserveButton.onclick = () => {
             seat.classList.add('reserved');
             seat.classList.remove('picked');
             currentMovie.seatingPlan[index].reserved = true;
-            localStorage.setItem("currentMovie", JSON.stringify(currentMovie));
+            updateLocalStorage();
         }
-
     });
-    console.log(currentMovie.seatingPlan)
-    updateMovie()
+    console.log(currentMovie.seatingPlan);
+    updateMovie();
 };
 
 if (cancelButton) {
@@ -73,22 +70,26 @@ if (cancelButton) {
                 seat.classList.remove('reserved');
                 seat.classList.remove('marked-for-cancel');
                 currentMovie.seatingPlan[index].reserved = false;
-                localStorage.setItem("currentMovie", JSON.stringify(currentMovie));
+                updateLocalStorage();
             }
         });
-        console.log(currentMovie.seatingPlan)
-        updateMovie()
+        console.log(currentMovie.seatingPlan);
+        updateMovie();
     };
-
 }
 
 function updateMovie() {
     const indexToUpdate = movieList.findIndex(movie => movie.title === currentMovie.title);
     if (indexToUpdate !== -1) {
         movieList[indexToUpdate] = currentMovie;
-        console.log(indexToUpdate)
+        console.log(indexToUpdate);
         localStorage.setItem("movieList", JSON.stringify(movieList));
-
+        localStorage.setItem("currentMovie", JSON.stringify(currentMovie));
     }
+}
+
+function updateLocalStorage() {
+    localStorage.setItem("currentMovie", JSON.stringify(currentMovie));
+    updateMovie();
 }
 
