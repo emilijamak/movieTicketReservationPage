@@ -10,8 +10,8 @@ export function addMovie() {
         let movieList = JSON.parse(localStorage.getItem('movieList')) || [];  // Retrieve existing movie list
 
         if (movieTitleInput.value && movieImageInput.value && movieSeatsInput.value) {
-            if (movieSeatsInput.value > 30) {
-                alert('The maximum seats number is 30');
+            if (movieSeatsInput.value > 30 && movieSeatsInput.value > 0) {
+                alert('Please insert a number between 1 and 30');
             } else {
 
                 const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
@@ -45,7 +45,7 @@ export function greetUser() {
     const logOutButton = document.querySelector('.logOut')
     const currentUser = localStorage.getItem("user");
     const greeting = document.querySelector('.greeting')
-    greeting.innerHTML = `<h3>Welcome, ${currentUser}</h3>`
+    greeting.innerHTML = `<h3>Welcome, ${currentUser}!</h3>`
 }
 
 export function logOut() {

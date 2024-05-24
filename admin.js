@@ -20,11 +20,9 @@ let movieList = JSON.parse(localStorage.getItem("movieList")) || [];
 
 if (currentUser === "admin") {
     optionsDiv.style.display = "flex";
-    addMovieCont.style.display = "none";
 } else {
     optionsDiv.style.display = "none";
     movieListCont.style.display = "flex";
-    addMovieCont.style.display = "none";
     goBackButton.style.display = "none";
 }
 
@@ -51,25 +49,29 @@ function appendMovies() {
                     <h4>${movie.title}</h4>
                     <h5>Seats available</h5>
                     <h6>(${freeSeats}/${movie.seats})</h6>
-                    ${currentUser === "admin" ? `<div class="button btn btn-outline-light" data-index="${index}">DELETE</div>` : ''}
+                    ${currentUser === "admin" ? `<div class="button btn btn-outline-light delete" data-index="${index}"><p>DELETE</p></div>` : ''}
                 </div>
             </div>
         `;
     });
 
-    const buttons = document.querySelectorAll('.btn');
+    const buttons = document.querySelectorAll('.delete');
     buttons.forEach(button => {
         button.onclick = (e) => {
+            console.log('works');
             e.stopPropagation();
-            const index = parseInt(e.target.getAttribute('data-index'), 10);
-            movieList = movieList.filter((_, movieIndex) => movieIndex !== index);
+            const movieTitle = e.target.closest('.movie').querySelector('h4').textContent; // Get the title of the movie associated with the clicked delete button
+            movieList = movieList.filter(movie => movie.title !== movieTitle);
             localStorage.setItem('movieList', JSON.stringify(movieList));
             appendMovies();
         };
     });
 
+
+
     addSeatingPlan(movieList);
     registerMovieClickEvents();
+
 }
 
 function registerMovieClickEvents() {

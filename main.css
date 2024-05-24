@@ -97,7 +97,7 @@ i {
   height: 500px;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
-  display: flex;
+  display: none;
   align-items: center;
 }
 .addMovieCont input {
@@ -150,6 +150,16 @@ img {
   border: 3px solid white;
 }
 
+.delete {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.delete p {
+  margin: 0;
+}
+
 .sittingPlan {
   background-color: white;
   padding: 10px;
@@ -157,7 +167,7 @@ img {
   width: 610px;
   display: grid;
   grid-template-columns: repeat(5, 110px);
-  grid-template-rows: repeat(4, 110px);
+  grid-template-rows: repeat(4, 80px);
   gap: 10px;
 }
 
